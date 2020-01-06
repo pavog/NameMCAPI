@@ -12,8 +12,8 @@ version = "2.0.7"
 description = "NameMC (https://namemc.com) Java wrapper"
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_8
-	targetCompatibility = JavaVersion.VERSION_8
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 defaultTasks("clean", "build", "sourcesJar", "shadowJar", "bintrayUpload")
