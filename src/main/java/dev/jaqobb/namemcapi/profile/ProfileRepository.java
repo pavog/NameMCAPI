@@ -82,14 +82,14 @@ public class ProfileRepository {
 	public Collection<Profile> getValidProfiles() {
 		return this.profiles.values().stream()
 			.filter(this::isProfileValid)
-			.collect(Collectors.toUnmodifiableList());
+			.collect(Collectors.toList());
 	}
 
 	@NotNull
 	public Collection<Profile> getInvalidProfiles() {
 		return this.profiles.values().stream()
 			.filter(profile -> !this.isProfileValid(profile))
-			.collect(Collectors.toUnmodifiableList());
+			.collect(Collectors.toList());
 	}
 
 	public void addProfile(@NotNull Profile profile) {
@@ -118,7 +118,7 @@ public class ProfileRepository {
 						JSONObject object = array.getJSONObject(index);
 						return new Friend(UUID.fromString(object.getString("uniqueId")), object.getString("name"));
 					})
-					.collect(Collectors.toUnmodifiableList());
+					.collect(Collectors.toList());
 				Profile profile = new Profile(uniqueId, friends);
 				this.profiles.put(uniqueId, profile);
 				callback.accept(profile, null);

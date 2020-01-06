@@ -80,14 +80,14 @@ public class ServerRepository {
 	public Collection<Server> getValidServers() {
 		return this.servers.values().stream()
 			.filter(this::isServerValid)
-			.collect(Collectors.toUnmodifiableList());
+			.collect(Collectors.toList());
 	}
 
 	@NotNull
 	public Collection<Server> getInvalidServers() {
 		return this.servers.values().stream()
 			.filter(server -> !this.isServerValid(server))
-			.collect(Collectors.toUnmodifiableList());
+			.collect(Collectors.toList());
 	}
 
 	public void addServer(@NotNull Server server) {
@@ -113,7 +113,7 @@ public class ServerRepository {
 				Collection<UUID> likes = IntStream.range(0, array.length())
 					.boxed()
 					.map(index -> UUID.fromString(array.getString(index)))
-					.collect(Collectors.toUnmodifiableList());
+					.collect(Collectors.toList());
 				Server server = new Server(address.toLowerCase(), likes);
 				this.servers.put(address.toLowerCase(), server);
 				callback.accept(server, null);

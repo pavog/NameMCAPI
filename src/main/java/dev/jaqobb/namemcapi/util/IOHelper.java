@@ -49,7 +49,7 @@ public final class IOHelper {
 	}
 
 	public static String getWebsiteContent(@NotNull String websiteUrl) throws IOException {
-		if (websiteUrl.isBlank()) {
+		if (websiteUrl.isEmpty()) {
 			throw new IllegalArgumentException("websiteUrl cannot be blank");
 		}
 		try (InputStream inputStream = new URL(websiteUrl).openStream(); BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
