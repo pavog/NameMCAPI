@@ -1,4 +1,4 @@
-NameMCAPI
+NameMCAPI [![Build Status](https://travis-ci.com/pavog/NameMCAPI.svg?branch=master)](https://travis-ci.com/pavog/NameMCAPI)
 =========
 
 A NameMC (https://namemc.com) Java wrapper.
